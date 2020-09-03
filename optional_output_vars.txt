@@ -1,0 +1,104 @@
+## optional_output_vars.txt
+
+##Variable Name                 	Units               	Interval     	Type  	Description
+#output_variable PPT                           	mmH2O               	float 	unsmoothed precipitation
+#output_variable TMP                           	deg C               	float 	mean unsmoothed temperature
+#output_variable VPR                           	Pa                  	float 	vapor pressure
+#output_variable FPRD_PPT                      	unit scalar         	float 	forest production moisture limitation
+#output_variable FPRD_TMP                      	unit scalar         	float 	forest production temperature limitation
+#output_variable GPRD_PPT                      	unit scalar         	float 	grass production moisture limitation
+#output_variable GPRD_TMP                      	unit scalar         	float 	grass production temperature limitation
+#output_variable RH                            	%                   	float 	relative humidity from unsmoothed temperature and vapor pressure
+#output_variable N_VOLATIL                     	g N m-2             	float 	N volatilization loss
+#output_variable C_HARVEST                     	g C m-2             	float 	C removed thru straw during harvest
+#output_variable TMAX                          	deg C               	float 	unsmoothed mean value of diurnal max temperature
+#output_variable TMIN                          	deg C               	float 	unsmoothed mean value of diurnal min temperature
+#output_variable AET                           	cm H2O              	float 	actual evapotranspiration
+#output_variable PET                           	cmH2O               	float 	potential evapotranspiration
+#output_variable SFC_RUNOFF                    	cmH2O               	float 	surface runoff
+#output_variable H2O_STREAM_FLOW               	cmH2O               	float 	water stream flow
+#output_variable NPP                           	g C m-2             	float 	net primary production
+#output_variable VTYPE                         	veg type            	float 	potential vegetation type
+#output_variable PHYSIOGNOMIC_CLASS            	class               	float 	physiognomic class
+#output_variable BIOME                         	biome category      	float 	biome
+#output_variable PART_BURN                     	fraction            	float 	fraction of cell affected by wildfire
+#output_variable CONSUMED                      	g C m-2             	float 	C in biomass consumed by fire
+#output_variable C_VEG                         	g C m-2             	float 	live biomass carbon
+#output_variable C_FOREST                      	g C m-2             	float 	live tree carbon
+#output_variable C_MAX_LIVE_GRASS_ABOVEGR      	g C m-2             	float 	max aboveground live grass carbon
+#output_variable FIRE_KILLED                   	g C m-2             	float 	carbon in biomass killed by fire
+#output_variable GFRAC                         	fraction            	float 	max grass fraction of live carbon
+#output_variable NEP                           	g C m-2             	float 	net ecosystem production
+#output_variable NBP                           	g C m-2             	float 	net biome production
+#output_variable RSP                           	g C m-2             	float 	heterotrophic respiration
+#output_variable BIO_CONSUME_CENTURY           	g C m-2             	float 	carbon in biomass consumed by fire, per CENTURY model
+#output_variable CONSUMED_LIVE                 	none                	float 	carbon in live biomass consumed by fire, per MCfire model
+#output_variable CONSUMED_DEAD                 	g C m-2             	float 	carbon in dead biomass consumed by fire, per MCfire model
+#output_variable FFMC_ANN_MAX                  	none                	float 	max fine fuel moisture content index (Canadian)
+#output_variable BUI_ANN_MAX                   	none                	float 	max fuel build up index (Canadian)
+#output_variable NPP_TREE                      	g C m-2             	float 	tree net primary production
+#output_variable NPP_GRASS                     	g C m-2             	float 	grass net primary production
+#output_variable MONTH_OF_FIRE                 	month, 1-12; 0 for no fire	float 	month in which a fire was simulated
+#output_variable MINERL_5                      	g N m-2             	float 	mineral N in 5th soil layer
+#output_variable C_ECOSYS                      	g C m-2             	float 	total ecosystem C storage
+#output_variable C_ECOSYS_DEC                  	g C m-2             	float 	total ecosystem C storage in December
+#output_variable C_LIVE_ABOVEGR                	g C m-2             	float 	C in live aboveground biomass
+#output_variable C_LIVE_BELOWGR                	g C m-2             	float 	C in live belowground biomass
+#output_variable C_DEAD_ABOVEGR                	g C m-2             	float 	C in dead aboveground biomass
+#output_variable C_DEAD_BELOWGR                	g C m-2             	float 	C in dead belowground biomass
+#output_variable C_MAX_FOREST_LEAF             	g C m-2             	float 	highest monthly C in forest leaves
+#output_variable C_FINE_BRANCH                 	g C m-2             	float 	C in fine branches
+#output_variable C_BOLE                        	g C m-2             	float 	C in large wood
+#output_variable C_MAX_COARSE_ROOT             	g C m-2             	float 	highest monthly C in coarse roots
+#output_variable C_MAX_FINE_ROOT               	g C m-2             	float 	highest monthly C in fine roots
+#output_variable C_MAX_LIVE_GRASS_BELOWGR      	g C m-2             	float 	highest monthly C in live grass belowground
+#output_variable C_LITTER                      	g C m-2             	float 	aboveground litter C for forest
+#output_variable C_LITTER_METAB                	g C m-2             	float 	metabolic C in surface litter
+#output_variable C_LITTER_STRUC                	g C m-2             	float 	structural C in surface litter
+#output_variable C_DEAD_WOOD                   	g C m-2             	float 	C in large dead wood
+#output_variable C_MAX_STANDING_DEAD           	g C m-2             	float 	highest monthly value of C in standing dead grass
+#output_variable C_SOIL_AND_LITTER             	g C m-2             	float 	soil and litter organic C
+#output_variable C_SOM_X_STRUC_METAB           	g C m-2             	float 	soil C exluding litter and structural C
+#output_variable C_SOM                         	g C m-2             	float 	total soil C including belowground structural and metabolic C
+#output_variable D1HR                          	g DM m-2            	float 	dead 1-hr fuel
+#output_variable D10HR                         	g DM m-2            	float 	dead 10-hr fuel
+#output_variable D100HR                        	g DM m-2            	float 	dead 100-hr fuel
+#output_variable D1000HR                       	g DM m-2            	float 	dead 1000-hr fuel
+#output_variable EM_CO                         	g CO m-2            	float 	CO emissions from fire
+#output_variable EM_CO2                        	g CO2 m-2           	float 	CO2 emissions from fire
+#output_variable EM_CH4                        	g CH4 m-2           	float 	CH4 emissions from fire
+#output_variable EM_NMHC                       	g NMHC m-2          	float 	non-methane hydrocarbon emissions from fire
+#output_variable EM_PM                         	g DM m-2            	float 	particulate matter emissions from fire
+#output_variable C_GRAIN                       	g C m-2             	float 	C related to grain production
+#output_variable TREE_HT                       	m                   	float 	tree height
+#output_variable C_MAX_LIVE_GRASS              	g C m-2             	float 	highest monthly C in live grass
+#output_variable C3_PCT_PROD                   	%                   	float 	% of production from C3 photosynthesis
+#output_variable TREE_TYPE                     	tree type           	int   	1-8 = EN,EN-DB,DB,DB-EB,EN-EB,EB,DN,DN-EN
+#output_variable MIN_SMOOTHED_TMP              	deg C               	float 	lowest smoothed monthly mean temperature
+#output_variable MC_CLIMATE_ZONE               	zone                	int   	1-5: arctic, boreal, temperate, subtropical, tropical
+#output_variable TMP_INDEX                     	0-100: none to total	float 	index of temperature limitation to growth
+#output_variable PPT_INDEX                     	0-100: none to total	float 	index of precipitation limitation to growth
+#output_variable NEEDLE_INDEX                  	0-100: broadleaf to needleleaf	float 	index of leaf form
+#output_variable EVERGREEN_INDEX               	0-100: deciduous to evergreen	float 	index of evergreen-ness
+#output_variable PSL                           	mmH2O               	float 	precipitation at sea level per PNW-GTR-841
+#output_variable SSZ_UB                        	m                   	float 	Sitka spruce zone upper bound per PNW-GTR-841
+#output_variable PSFZ_LB                       	m                   	float 	Pacific silver fir zone lower bound per PNW-GTR-841
+#output_variable SAFZ_LB                       	m                   	float 	subalpine fir zone lower bound per PNW-GTR-841
+#output_variable PKLZ_LB                       	m                   	float 	subalpine parkland lower bound per PNW-GTR-841
+#output_variable MATSL                         	deg C               	float 	mean air temperature at sea level per PNW-GTR-841
+#output_variable MAX_SFC_RUNOFF                	cmH2O               	float 	maximum surface runoff
+#output_variable MAX_GRASS_LAI                 	m2 leaf m-2 ground  	float 	unsmoothed maximum of monthly grass leaf area index
+#output_variable MAX_TREE_LAI                  	m2 leaf m-2 ground  	float 	unsmoothed maximum of monthly tree leaf area index
+#output_variable SNOWPACK_DAY91                	mm H2O              	float 	snowpack on Apr 1 (N hemisphere) or Sep 29 (S hemisphere)
+#output_variable CONTINENTALITY                	deg C               	float 	continentality index
+#output_variable GDD                           	deg C day           	float 	growing degree-days, referenced to 0 C
+#output_variable SOIL_TMP_MAX                  	deg C               	float 	estimated max soil temperature
+#output_variable FIRE                          	fires per year      	float 	fire count
+#output_variable ELEV                          	m                   	float 	elevation
+#output_variable SWHC_TOP                      	                    	float 	soil water holding capacity of top soil layer
+#output_variable SWHC_MID                      	                    	float 	soil water holding capacity of middle soil layer
+#output_variable SWHC_DEEP                     	                    	float 	soil water holding capacity of deep soil layer
+#output_variable SWHC_ALL                      	                    	float 	soil water holding capacity, total in all soil layers
+#output_variable SOIL_DEPTH                    	mm                  	float 	soil depth
+
+number of variables = 99

@@ -1,0 +1,29 @@
+#-------------------------------------------------------------------------------
+# This is the state-of-the-art MAPSS run for ConUS on the NA8km grid
+#invoke as mc2 CONUS runNA8km_MAPSS.txt
+
+# Simulation phase
+run_mode = MAPSS_EQ
+
+# Study area
+grid_name = NA8km
+mask_file = mask_US8km.nc
+col_begin = 517
+col_end = 1213
+row_begin = 423
+row_end = 718
+
+# Input data
+climate_data_directory = Input/Grid_NA8km/LandCarbon/EQ
+earth_data_directory = Input/Grid_NA8km/LandCarbon/Geography
+soil_data_file = soils_scs.nc
+
+# Calibration values
+
+# Output data
+output_file_prefix = US8km
+
+end_of_commands
+
+
+#-------------------------------------------------------------------------------

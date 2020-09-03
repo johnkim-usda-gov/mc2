@@ -1,0 +1,27 @@
+c*****************************************************************
+c	$RCSfile: ligvar.inc,v $
+c	$Revision: 1.1 $
+c	$Date: 2006/10/13 18:25:50 $
+c	$Locker: wellsj $
+c	
+c$Log: ligvar.inc,v $
+cRevision 1.1  2006/10/13 18:25:50  wellsj
+cInitial revision
+c
+cRevision 1.2  2003/11/24 15:39:06  conklind
+cAdd symbols for determining length at compile time.
+c
+cRevision 1.1  2003/11/20 21:47:37  conklind
+cInitial revision
+c
+c******************************************************************
+c**** pltlig tells what fraction of the current year's plant residue
+c**** will be lignin.  (1) = aboveground; (2) = belowground.
+      common/ligvar/pltlig(2),
+     -  ligvarEnd
+     
+      real pltlig
+
+      real ligvarStart, ligvarEnd
+      equivalence (ligvarStart, pltlig(1))
+      save /ligvar/
