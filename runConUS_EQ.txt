@@ -1,0 +1,26 @@
+#invoke as mc2 CONUS runConUS_EQ.txt
+
+# Simulation phase and parameters
+run_mode = CENTURY_EQ
+years_to_run = 3000
+
+# Study area
+grid_name = VEMAP
+mask_file = mask_VEMAP.nc
+col_begin = 0
+col_end = 114
+row_begin = 0
+row_end = 47
+
+# Input data
+climate_data_directory = Input/Grid_VEMAP/EQ
+earth_data_directory = Input/Grid_VEMAP/EarthData
+soil_data_file = soils_scs.nc
+CO2_file = Input/CO2ramps/co2ramp_3000.txt
+warmstart_file = ConUS_mapss.nc
+
+# Output data
+output_file_prefix = ConUS
+
+end_of_commands
+

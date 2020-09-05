@@ -1,0 +1,60 @@
+#-------------------------------------------------------------------------------
+# for running 1896-1993 only, starting with the warmstart file from 1895
+#invoke as mc2 CONUS runUS8km_Hist.txt
+
+# Simulation phase and parameters
+run_mode = TRANSIENT
+years_to_run = 116
+first_calendar_year_of_run = 1895
+multiyr_start = 1895
+multiyr_len = 116
+unlimited_N_switch = ON
+fire_mode_switch = ON
+
+# Study area
+grid_name = NA8km
+mask_file = mask_US8km.nc
+col_begin = 517
+col_end = 1213
+row_begin = 427
+row_end = 718
+
+# Input data
+climate_data_directory = Input/Grid_NA8km/LandCarbon/Hist
+earth_data_directory = Input/Grid_NA8km/LandCarbon/Geography
+soil_data_file = soils_scs.nc
+CO2_file = Input/CO2ramps/co2ramp_1895_2011_SRES_A2_1col.txt
+warmstart_file = Output/US8km/MC2_P59_B160/US8km_Spinup_ws.nc
+
+# Calibration values
+alt_tree_allometry_calculation = ON
+lait_lower_limit = .01
+
+# Output data
+output_file_prefix = US8km_Hist
+warmstart_output_switch = OFF
+yearly_output_switch = OFF
+#output_variable GFRAC
+#output_variable C_FOREST
+#output_variable PPT
+
+end_of_commands
+
+Historical:
+
+~/bin/mc1 \
+  -B $tmp/ModelParameters \
+  -Cm -m 4 -F 1 -E 10 -N 1 \
+  -t -4 \
+  -G LYNX \
+  --set_code_flag ALT_TREE_ALLOMETRY \
+  --lait_lower_limit .01 \
+  --fire_suppression 1 \
+  --fire_suppression_first_year 1950 \
+  -J ../CO2ramps/co2ramp_1895_2010_SRES_A2 \
+  -f OutputVariableLists/spinupVars.txt \
+  -P Input/Hist_${rank} \
+  -0 0.083333333333333 -1 85 -2 -168 -A 1895 -Y 116 \
+  -r ${firstRow},${lastRow} -c ${firstCol},${lastCol} \
+  -b Results/SpinupLaprod/spinup_${rank}_bgc.nc -d 13448 \
+  -o Results/HistSave/hist_${rank}

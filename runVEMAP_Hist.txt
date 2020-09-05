@@ -1,0 +1,55 @@
+#invoke as mc2 CONUS runVEMAP_Hist.txt
+
+# Parameters which depend on the simulation phase
+run_mode = TRANSIENT
+years_to_run = 99
+climate_data_directory = Input/Grid_VEMAP/Hist
+CO2_file = Input/CO2ramps/co2ramp_1895_2008_SRES_A2_1col.txt
+warmstart_file = VEMAP_Spinup_ws.nc 
+output_file_prefix = VEMAP_Hist
+first_calendar_year_of_run = 1895
+years_offset_into_input_data = 0
+multiyr_start = 1895
+multiyr_len = 99
+yearly_output_switch = ON
+
+## Output Variables
+output_variable C_ECOSYS
+output_variable C_VEG
+output_variable C_FOREST
+output_variable GFRAC
+output_variable NBP
+output_variable CONSUMED
+output_variable FIRE_KILLED
+
+# Parameters which need not change from phase to phase
+## Study area
+grid_name = VEMAP
+mask_file = mask_VEMAP.nc
+row_begin = 0
+row_end = 47
+col_begin = 0
+col_end = 114
+
+## Input data
+earth_data_directory = Input/Grid_VEMAP/EarthData
+soil_data_file = soils_scs.nc
+century_path = Input/ModelParameters_MC2/
+
+## Model configuration and calibration values
+unlimited_N_switch = ON
+fire_mode_switch = ON
+forest_thres_C = 3000.
+desert_grass_C_max = 250.
+alt_tree_allometry_calculation = ON
+alt_fuel_load_calculation = ON
+lait_lower_limit = .01
+c3_threshold = 50.    # 50%
+grassfrac_thres = 0.50
+bz_thres = -16.  # deg C
+
+end_of_commands
+
+code_flag 0 ON # NLAYER_LE_9_FLAG for compatibility with versions prior to 2B67
+code_flag 7 ON # FIRE_CODE_FLAG for compatibility with versions prior to 2B64; use m_vegc<=105. instead of c_all_abovegr<60 to rule out fire
+code_flag 8 ON # TREE_N_FLAG for compatibility with versions prior to 2B65

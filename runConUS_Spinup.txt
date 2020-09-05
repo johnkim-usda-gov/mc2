@@ -1,0 +1,161 @@
+#invoke as mc2 CONUS runConUS_SPINUP.txt
+
+# Simulation phase and parameters
+run_mode = SPINUP
+years_to_run = 1000
+
+# Study area
+grid_name = VEMAP
+mask_file = mask_VEMAP.nc
+row_begin = 0
+row_end = 47
+col_begin = 0
+col_end = 114
+
+# Input data
+climate_data_directory = Input/Grid_VEMAP/Spinup
+earth_data_directory = Input/Grid_VEMAP/EarthData
+soil_data_file = soils_scs.nc
+CO2_file = Input/CO2ramps/co2ramp_3000.txt
+warmstart_file = ConUS_eq.nc
+
+# Calibration values
+
+# Output data
+output_file_prefix = ConUS_Spinup
+yearly_output_switch = OFF
+
+end_of_commands
+
+
+
+-Y 1000 -c 0,114 -r 0,47 -P Input/Grid_VEMAP/Spinup -Cm -m 3 -F 1 -E 10 -f Input/OutputVariableLists/spinupVars.txt -o ConUS_Spinup -t -4 -i 1 -B Input/ModelParameters_B41 -b Output/MC2qualificationTests/MC1_B153plus/ConUS_EQ_bgc.nc -J ../../CO2ramps/co2ramp_3000.txt -N 1 -0 0.5 -1 49.0 -2 -124.5 -G MC2 -d 13448 --my2start 0 --my2length 100
+#run MC1 spinup with fire
+
+#this version is for comparing against MC1 with fire
+#invoke as mc2 GLOBAL runConUS_SPINUP.txt
+
+# Simulation phase and parameters
+run_mode = SPINUP
+years_to_run = 1000
+unlimited_N_switch = ON
+fire_mode_switch = ON
+code_flag 5 ON    # MAPSS_IN_SPINUP_CODE_FLAG
+
+# Study area
+grid_name = VEMAP
+mask_file = mask_VEMAP.nc
+row_begin = 9
+row_end = 10
+col_begin = 2
+col_end = 3
+
+# Input data
+climate_data_directory = Input/Grid_VEMAP/Spinup
+earth_data_directory = Input/Grid_VEMAP/EarthData
+soil_data_file = soils_scs.nc
+CO2_file = Input/CO2ramps/co2ramp_3000.txt
+warmstart_file = Output/MC2qualificationTests/MC2_P43_B153plus/ConUS_no_mapss_subalpine_eq.nc
+
+# Calibration values
+MAPSS_subalpine_threshold = 0.0
+maritime_threshold = 16.
+tmmin_threshold = 1.5
+bui_EN_threshold = 122.85
+ffmc_EN_DB_threshold = 87.
+bui_EN_DB_threshold = 110.
+
+# Output data
+output_file_prefix = ConUS_Spinup_no_mapss_subalpine
+
+end_of_commands
+
+
+#this version is for comparing against MC1 without fire
+#invoke as mc2 GLOBAL runConUS_SPINUP.txt
+-Y 1000 -c 0,114 -r 0,47 -P Input/Grid_VEMAP/Spinup -Cm -m 3 -F 0 -E 10 -f Input/OutputVariableLists/spinupVars.txt -o ConUS_Spinup_no_fire -t -4 -i 1 -B Input/ModelParameters_B41 -b Output/MC2qualificationTests/MC1_B153plus/ConUS_EQ_bgc.nc -J ../../CO2ramps/co2ramp_3000.txt -N 1 -0 0.5 -1 49.0 -2 -124.5 -G MC2 -d 13448
+
+
+# Simulation phase and parameters
+run_mode = SPINUP
+years_to_run = 1000
+unlimited_N_switch = ON
+fire_mode_switch = OFF
+code_flag 5 ON    # MAPSS_IN_SPINUP_CODE_FLAG
+
+# Study area
+grid_name = VEMAP
+mask_file = mask_VEMAP.nc
+row_begin = 0
+row_end = 47
+col_begin = 0
+col_end = 114
+
+# Input data
+climate_data_directory = Input/Grid_VEMAP/Spinup
+earth_data_directory = Input/Grid_VEMAP/EarthData
+soil_data_file = soils_scs.nc
+CO2_file = Input/CO2ramps/co2ramp_3000.txt
+warmstart_file = Output/MC2qualificationTests/MC2_P43_B153plus/ConUS_no_mapss_subalpine_eq.nc
+
+# Calibration values
+MAPSS_subalpine_threshold = 0.0
+maritime_threshold = 16.
+tmmin_threshold = 1.5
+bui_EN_threshold = 122.85
+ffmc_EN_DB_threshold = 87.
+bui_EN_DB_threshold = 110.
+
+# Output data
+output_file_prefix = ConUS_Spinup_no_mapss_subalpine_no_fire
+
+end_of_commands
+
+
+#this version is for comparing against MC1: no wind, no fire
+#invoke as mc2 GLOBAL runVEMAP_SPINUP.txt
+
+-Y 100 -c 66,67 -r 38,39 -P Input/Grid_VEMAP/Spinup_no_wind -Cm -m 3 -F 0 -E 10 -f Input/OutputVariableLists/spinupVars.txt -o ConUS_Spinup_no_fire_no_wind -t -4 -i 1 -B Input/ModelParameters_B41 -b Output/MC2qualificationTests/MC1_B153_no_wind/ConUS_EQ_no_wind_bgc.nc -J ../../CO2ramps/co2ramp_3000.txt -N 1 -0 0.5 -1 49.0 -2 -124.5 -G MC2 -d 13448
+
+# Simulation phase and parameters
+run_mode = SPINUP
+years_to_run = 1000
+unlimited_N_switch = ON
+fire_mode_switch = OFF
+code_flag 5 ON    # MAPSS_IN_SPINUP_CODE_FLAG
+
+# Study area
+grid_name = VEMAP
+mask_file = mask_VEMAP.nc
+row_begin = 0
+row_end = 47
+col_begin = 0
+col_end = 114
+
+# Input data
+dummy_wind_switch = ON
+climate_data_directory = Input/Grid_VEMAP/Spinup
+earth_data_directory = Input/Grid_VEMAP/EarthData
+soil_data_file = soils_scs.nc
+CO2_file = Input/CO2ramps/co2ramp_3000.txt
+warmstart_file = Output/MC2qualificationTests/MC2_P38_B153_no_wind/MC2_ConUS_EQ_eq.nc
+
+# Calibration values
+MAPSS_subalpine_threshold = 0.0
+maritime_threshold = 16.
+tmmin_threshold = 1.5
+bui_EN_threshold = 122.85
+ffmc_EN_DB_threshold = 87.
+bui_EN_DB_threshold = 110.
+
+# Output data
+output_file_prefix = ConUS_Spinup_no_wind_no_fire
+
+end_of_commands
+
+
+
+
+
+-Y 1000 -c 0,114 -r 0,47 -P Input/Grid_VEMAP/Spinup -Cm -m 3 -F 1 -E 10 -f shortSpinupOutVarList.txt -o ConUS_Spinup -t -4 -i 1 -B Input/ModelParameters_B41 -b Output/VEMAP/MC1_B152/ConUS_EQ_bgc.nc -J ../../CO2ramps/co2ramp_3000.txt -N 1 -0 0.5 -1 49.0 -2 -124.5 -G MC2 -d 13448 --mask_file mask_VEMAP.nc
+
