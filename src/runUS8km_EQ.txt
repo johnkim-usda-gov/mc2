@@ -1,0 +1,37 @@
+#-------------------------------------------------------------------------------
+# This is the state-of-the-art EQ run for ConUS on the NA8km grid
+#invoke as mc2 CONUS runUS8km_EQ.txt
+
+# Simulation phase and parameters
+run_mode = CENTURY_EQ
+years_to_run = 3000
+unlimited_N_switch = ON
+
+# Study area
+grid_name = NA8km
+mask_file = mask_US8km.nc
+col_begin = 517
+col_end = 1213
+row_begin = 423
+row_end = 718
+
+# Input data
+climate_data_directory = Input/Grid_NA8km/LandCarbon/EQ
+earth_data_directory = Input/Grid_NA8km/LandCarbon/Geography
+soil_data_file = soils_scs.nc
+CO2_file = Input/CO2ramps/co2ramp_3000.txt
+warmstart_file = Output/US8km/MC2_2B9/US8km_mapss.nc
+
+# Output data
+output_file_prefix = US8km
+
+end_of_commands
+
+EQ:
+
+~/bin/mc1 -r ${firstrow},${lastrow} -c ${colOffset},${lastCol} \
+  -Y 3000 -P Input/EQ -Cm -m 2 -F 1 -E 10 -f OutputVariableLists/spinupVars.txt \
+  -o Results/EQ/eq_${rank} -B $tmp/ModelParameters \
+  -J ../CO2ramps/co2ramp_3000 -N 1 \
+  -0 0.083333333333333 -1 85 -2 -168 -G LYNX
+
